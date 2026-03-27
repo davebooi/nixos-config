@@ -160,10 +160,7 @@
 
   # Enable home-manager and git
   programs.home-manager.enable = true;
-  programs.git.enable = true;
-
-  # basic configuration of git
-  programs.git.settings = {
+  programs.git = {
     enable = true;
     userName = "davebooi";
     userEmail = "db@scurr.club";
