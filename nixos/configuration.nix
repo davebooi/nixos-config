@@ -122,7 +122,7 @@
       description = "Dave";
       packages = with pkgs; [];
       openssh.authorizedKeys.keys = [
-        "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIAgVyWfHJOnYfM/B7pwIKHoV57E4lRdg1owwCz9F4GMd dave@nixos"
+        "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIBolGUP1csTwizfDMc5XF9+pM7bgVYwewCmWzRjn+qOF dave@arch-laptop"
       ];
       # TODO: Be sure to add any other groups you need (such as networkmanager, audio, docker, etc)
       extraGroups = [ "networkmanager" "wheel" ];
