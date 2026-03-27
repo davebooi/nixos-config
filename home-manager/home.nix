@@ -168,6 +168,10 @@
     };
   };
 
+  # load SSH keys into agent
+  programs.ssh.addKeysToAgent = "yes";
+  services.ssh-agent.enable = true;
+
   # Nicely reload system units when changing configs
   systemd.user.startServices = "sd-switch";
 
