@@ -164,6 +164,13 @@
     };
   };
 
+  system.autoUpgrade = {
+    enable = true;
+    flake = "github:davebooi/nixos-config";
+    flags = [ "--update-input" "nixpkgs" ];
+    dates = "04:00";
+  };
+
   # https://nixos.wiki/wiki/FAQ/When_do_I_update_stateVersion
   system.stateVersion = "25.11";
 }
