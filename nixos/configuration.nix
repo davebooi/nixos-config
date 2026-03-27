@@ -32,19 +32,7 @@
   boot.loader.systemd-boot.configurationLimit = 10;
   # boot.loader.grub.configurationLimit = 10;
 
-  # Perform garbage collection weekly to maintain low disk usage
-  nix.gc = {
-    automatic = true;
-    dates = "weekly";
-    options = "--delete-older-than 7d";
-  };
 
-  # Optimize storage
-  # You can also manually optimize the store via:
-  #    nix-store --optimise
-  # Refer to the following link for more details:
-  # https://nixos.org/manual/nix/stable/command-ref/conf-file.html#conf-auto-optimise-store
-  nix.settings.auto-optimise-store = true;
 
   nixpkgs = {
     # You can add overlays here
@@ -74,6 +62,12 @@
   nix = let
     flakeInputs = lib.filterAttrs (_: lib.isType "flake") inputs;
   in {
+    gc = {
+    # Perform garbage collection weekly to maintain low disk usage
+    automatic = true;
+    dates = "weekly";
+    options = "--delete-older-than 7d";
+  };
     settings = {
       # Enable flakes and new 'nix' command
       experimental-features = "nix-command flakes";
@@ -81,6 +75,14 @@
       flake-registry = "";
       # Workaround for https://github.com/NixOS/nix/issues/9574
       nix-path = config.nix.nixPath;
+
+
+      # Optimize storage
+      # You can also manually optimize the store via:
+      #    nix-store --optimise
+      # Refer to the following link for more details:
+      # https://nixos.org/manual/nix/stable/command-ref/conf-file.html#conf-auto-optimise-store
+      auto-optimise-store = true;
     };
     # Opinionated: disable channels
     channel.enable = false;
