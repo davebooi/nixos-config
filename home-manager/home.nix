@@ -162,8 +162,10 @@
   programs.home-manager.enable = true;
   programs.git = {
     enable = true;
-    userName = "davebooi";
-    userEmail = "db@scurr.club";
+    settings.user = {
+      name = "davebooi";
+      email = "db@scurr.club";
+    };
   };
 
   # Nicely reload system units when changing configs
