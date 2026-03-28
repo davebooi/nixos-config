@@ -115,6 +115,10 @@
     pciutils # lspci
     usbutils # lsusb
 
+    swaybg # wallpaper
+    nautilus #file manager
+    xwayland-satellite # xwayland support (niri)
+    
    ];
 
 
@@ -168,12 +172,54 @@
     };
   };
 
+
+
   # load SSH keys into agent
   programs.ssh.addKeysToAgent = "yes";
   services.ssh-agent.enable = true;
 
   # Nicely reload system units when changing configs
   systemd.user.startServices = "sd-switch";
+
+
+  #window manager and such
+    programs.niri.enable = true;
+
+    #login manager
+    services.greetd = {
+      enable = true;
+      settings = {
+        default_session = {
+          command = "${config.programs.niri.package}/bin/niri-session";
+          user = "dave";
+        };
+      };
+    };
+
+  programs.fuzzel.enable = true; # Super+D in the default setting (app launcher)
+  programs.gtklock.enable = true; # Super+Alt+L in the default setting (screen locker)
+  programs.waybar.enable = true; # launch on startup in the default setting (bar)
+  
+  services.mako.enable = true; # notification daemon
+  services.swayidle.enable = true; # idle management daemon
+  services.polkit-gnome.enable = true; # polkit
+
+
+  programs.rofi = {
+    enable = true;
+    theme = "squared";
+    font = "sans-serif";
+    package = pkgs.rofi;
+    modes = [
+      "drun"
+      "run"
+      "window"
+      "ssh"  
+    ];
+    extraConfig = {
+      show-icons = true;
+    };
+  };
 
   # https://nixos.wiki/wiki/FAQ/When_do_I_update_stateVersion
   home.stateVersion = "25.11";

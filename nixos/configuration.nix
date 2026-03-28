@@ -93,8 +93,9 @@
   };
 
 
+  # hostname
   networking.hostName = "nixos";
-  # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
+  networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
   # Configure network proxy if necessary
   # networking.proxy.default = "http://user:password@proxy:port/";
@@ -164,13 +165,23 @@
     };
   };
 
+  # automatically upgrade host on change
   system.autoUpgrade = {
     enable = true;
     flake = "github:davebooi/nixos-config";
     flags = [ "--update-input" "nixpkgs" ];
-    dates = "04:00";
+    dates = "19:00";
   };
+
+
+  
+  # # fix file chooser (TBD)
+  # xdg.portal.config.niri = {
+  # "org.freedesktop.impl.portal.FileChooser" = [ "gtk" ]; # or "kde"
+  # };
+  
 
   # https://nixos.wiki/wiki/FAQ/When_do_I_update_stateVersion
   system.stateVersion = "25.11";
 }
+
