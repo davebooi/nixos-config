@@ -5,6 +5,7 @@
   lib,
   config,
   pkgs,
+  sops-nix.homeManagerModules.sops
   ...
 }: {
   # You can import other home-manager modules here
@@ -202,18 +203,18 @@
 
 
   #window manager and such
-    programs.niri.enable = true;
+  programs.niri.enable = true;
 
-    #login manager
-    services.greetd = {
-      enable = true;
-      settings = {
-        default_session = {
-          command = "${config.programs.niri.package}/bin/niri-session";
-          user = "dave";
-        };
+  #login manager
+  services.greetd = {
+    enable = true;
+    settings = {
+      default_session = {
+        command = "${config.programs.niri.package}/bin/niri-session";
+        user = "dave";
       };
     };
+  };
 
   programs.fuzzel.enable = true; # Super+D in the default setting (app launcher)
   programs.gtklock.enable = true; # Super+Alt+L in the default setting (screen locker)
