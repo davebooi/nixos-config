@@ -175,7 +175,26 @@
 
 
   # load SSH keys into agent
-  programs.ssh.addKeysToAgent = "yes";
+  programs.ssh = {
+    enable = true;
+    startAgent = true;
+    addKeysToAgent = "yes";
+    extraConfig = ''
+      AddKeysToAgent yes
+      Host github.com
+        Hostname github.com
+        Port 22
+        User git
+        IdentityFile ~/.ssh/id_ed25519_github
+    '';
+  };
+
+  programs.ssh.matchBlocks = {
+  "github.com" = {
+    identityFile = "~/.ssh/id_ed25519_github";
+  };
+};
+
   services.ssh-agent.enable = true;
 
   # Nicely reload system units when changing configs
