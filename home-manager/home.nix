@@ -5,11 +5,12 @@
   lib,
   config,
   pkgs,
-  sops-nix.homeManagerModules.sops
   ...
 }: {
   # You can import other home-manager modules here
   imports = [
+    inputs.sops-nix.homeManagerModules.sops
+
     # If you want to use modules your own flake exports (from modules/home-manager):
     # inputs.self.homeManagerModules.example
 
