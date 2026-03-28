@@ -207,17 +207,6 @@
   #window manager and such
   xdg.configFile."niri/config.kdl".source = ./config.kdl;
 
-  #login manager
-  services.greetd = {
-    enable = true;
-    settings = {
-      default_session = {
-        command = "${config.programs.niri.package}/bin/niri-session";
-        user = "dave";
-      };
-    };
-  };
-
   programs.fuzzel.enable = true; # Super+D in the default setting (app launcher)
   programs.waybar.enable = true; # launch on startup in the default setting (bar)
   
