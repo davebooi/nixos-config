@@ -205,7 +205,7 @@
 
 
   #window manager and such
-  programs.niri.enable = true;
+  xdg.configFile."niri/config.kdl".source = ./config.kdl;
 
   #login manager
   services.greetd = {
