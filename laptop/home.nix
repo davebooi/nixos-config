@@ -179,8 +179,8 @@
     };
   };
 
-  # Set the ssh package to be the hardened version of itself
-  ssh.package = lib.mkDefault (harden pkgs.openssh);
+  # # Set the ssh package to be the hardened version of itself
+  # ssh.package = lib.mkDefault (harden pkgs.openssh);
 
 
   # Nicely reload system units when changing configs
