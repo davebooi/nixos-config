@@ -183,7 +183,6 @@
   # load SSH keys into agent
   programs.ssh = {
     enable = true;
-    startAgent = true;
     addKeysToAgent = "yes";
     extraConfig = ''
       AddKeysToAgent yes
