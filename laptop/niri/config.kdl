@@ -237,14 +237,14 @@ window-rule {
 
 
 binds {
-    Mod+Return hotkey-overlay-title="Open a Terminal: ghostty" { spawn "ghostty"; }
+    Mod+Return hotkey-overlay-title="Open a Terminal: alacritty" { spawn "alacritty"; }
     Mod+D hotkey-overlay-title="Run an Application: rofi" { spawn "rofi" "-show" "drun"; }
     Mod+Shift+Q hotkey-overlay-title="Run an Application: rofi-powermenu" { spawn "rofi-powermenu"; }
     Mod+Shift+C hotkey-overlay-title="Run an Application: rofi-calc" { spawn "rofi-calc"; }
     Mod+W hotkey-overlay-title="Run an Application: Firefox" { spawn "firefox"; }
-    Mod+T hotkey-overlay-title="Run an Application: yazi" { spawn "ghostty" "-e" "yazi"; }
+    Mod+T hotkey-overlay-title="Run an Application: yazi" { spawn "alacritty" "-e" "yazi"; }
     Mod+Shift+T hotkey-overlay-title="Run an Application: thunar" { spawn "thunar"; }
-    Mod+Shift+Y hotkey-overlay-title="Run an Application: clipse" { spawn "ghostty" "--title=clipse" "--command=clipse"; }
+    Mod+Shift+Y hotkey-overlay-title="Run an Application: cliphist" { spawn "alacritty" "--title=cliphist" "--command=cliphist"; }
     //Mod+Shift+X hotkey-overlay-title="gptme-MyAgent" { spawn "~/.local/bin/gptme-launch"; }
     Mod+Shift+X hotkey-overlay-title="waybinder" { spawn "waybinder" "-T" "-w" "-w" "-y"; }
     Mod+Shift+E hotkey-overlay-title="Run an Application: rofimoji" { spawn "rofimoji" "-a" "copy"; }
