@@ -7,7 +7,7 @@
 # }
 
 
-{ pkgs, inputs, ... }:
+{ pkgs, inputs, lib, ... }:
 {
   imports = [
     inputs.noctalia.homeModules.default
@@ -15,7 +15,7 @@
 
   programs.noctalia-shell = {
       enable = true;
-      settings = {
+      settings = lib.mkForce {
         settingsVersion = 0;
         bar = {
           barType = "simple";
