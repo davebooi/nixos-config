@@ -44,7 +44,7 @@
     mpv
     #ente-auth
     #nautilus
-    thunar
+    xfce.thunar
 
     # TUI
     yazi
