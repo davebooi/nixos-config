@@ -122,11 +122,10 @@
     nautilus #file manager
     xwayland-satellite # xwayland support (niri)
     gtklock # screen locker (Super+Alt+L in niri default)
-    fuzzel.enable = true; # Super+D in the default setting (app launcher)
-    waybar.enable = true; # launch on startup in the default setting (bar)
-  
-    
    ];
+
+  programs.fuzzel.enable = true; # Super+D in the default setting (app launcher)
+  programs.waybar.enable = true; # launch on startup in the default setting (bar)
 
 
   # starship - an customizable prompt for any shell
