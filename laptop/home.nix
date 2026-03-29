@@ -199,7 +199,7 @@
   # rofi launcher
   programs.rofi = {
     enable = true;
-    theme = "sidebar";
+    theme = lib.mkForce "sidebar";
     font = "sans-serif";
     package = pkgs.rofi;
     modes = [
