@@ -200,7 +200,7 @@
   programs.rofi = {
     enable = true;
     theme = lib.mkForce "sidebar";
-    font = "sans-serif";
+    # font = "sans-serif";
     package = pkgs.rofi;
     modes = [
       "drun"
