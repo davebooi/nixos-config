@@ -110,7 +110,7 @@ environment {
 }
 
 //STARTUP APPS
-spawn-at-startup "qs" "-c" "noctalia-shell" "-d"
+spawn-at-startup "noctalia-shell"
 spawn-at-startup "gnome-keyring-daemon" "--start" "--components=secrets"
 spawn-at-startup "thunar" "--daemon"
 spawn-at-startup "sleep 5 && aw-qt"
