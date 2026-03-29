@@ -19,6 +19,7 @@
     ../modules/hm/stylix.nix
     ../modules/hm/noctalia.nix
     ../modules/hm/swayidle.nix
+    ../modules/hm/cliphist.nix
     # ../modules/hm/helix.nix
     # ../modules/hm/fish.nix
     # ../modules/hm/obsidian.nix
