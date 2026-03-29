@@ -6,7 +6,13 @@
   config,
   pkgs,
   ...
-}: {
+}: let
+  # path to your nvim config directory
+  niriPath = "${config.home.homeDirectory}/nix-config/laptop/niri";
+
+in
+{
+  xdg.configFile."nvim".source = config.lib.file.mkOutOfStoreSymlink niriPath;
   
   # You can import other home-manager modules here
   imports = [

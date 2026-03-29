@@ -2,7 +2,10 @@
   pkgs,
   user,
   ...
-}: {
+}:
+  
+{
+  xdg.configFile."niri".source = config.lib.file.mkOutOfStoreSymlink niriPath;
   home.username = user;
   home.homeDirectory = "/home/${user}";
 
