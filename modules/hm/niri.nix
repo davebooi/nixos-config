@@ -2,7 +2,7 @@
 {
   # ...
 
-  home-manager.users.drfoobar = {
+  home-manager.users.dave = {
     # ...
     programs.niri = {
       package = niri;
