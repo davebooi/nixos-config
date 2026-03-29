@@ -6,14 +6,8 @@
   config,
   pkgs,
   ...
-}: let
-  # path to your nvim config directory
-  niriPath = "${config.home.homeDirectory}/nix-config/laptop/niri";
-
-in
+}:
 {
-  xdg.configFile."niri".source = config.lib.file.mkOutOfStoreSymlink niriPath;
-  
   # You can import other home-manager modules here
   imports = [
     #inputs.sops-nix.homeManagerModules.sops
@@ -193,7 +187,9 @@ in
   systemd.user.startServices = "sd-switch";
 
 
-  # niri window manager config (symlinked from repo via line 15)
+  # niri window manager and noctllalia she
+  xdg.configFile."niri/config.kdl" = { source = niri/config.kdl; force = true; };
+  xdg.configFile."niri/noctalia.kdl" = { source = niri/noctalia.kdl; force = true; };
 
   services.mako.enable = true; # notification daemon
   services.swayidle.enable = true; # idle management daemon
