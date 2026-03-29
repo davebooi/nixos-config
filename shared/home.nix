@@ -14,7 +14,7 @@
     # ../modules/hm/nixcord.nix
     # ../modules/hm/swww.nix
     ../modules/hm/waybar.nix
-    # ../modules/hm/stylix.nix
+    ../modules/hm/stylix.nix
     # ../modules/hm/helix.nix
     # ../modules/hm/fish.nix
     # ../modules/hm/obsidian.nix

@@ -101,6 +101,9 @@
   programs.fuzzel.enable = true; # Super+D in the default setting (app launcher)
   programs.waybar.enable = true; # launch on startup in the default setting (bar)
 
+  # Ensure a shell is enabled
+  zsh.enable = lib.mkDefault true;
+
 
   # starship - an customizable prompt for any shell
   programs.starship = {
@@ -176,12 +179,15 @@
     };
   };
 
+  # Set the ssh package to be the hardened version of itself
+  ssh.package = lib.mkDefault (harden pkgs.openssh);
+
 
   # Nicely reload system units when changing configs
   systemd.user.startServices = "sd-switch";
 
 
-  #window manager and such
+  # niri window manager and noctllalia she
   xdg.configFile."niri/config.kdl" = { source = niri/config.kdl; force = true; };
   xdg.configFile."niri/noctalia.kdl" = { source = niri/noctalia.kdl; force = true; };
 
