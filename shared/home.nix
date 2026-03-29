@@ -51,6 +51,8 @@
     bat
     fzf
     ripgrep
+
+    quickshell
   ];
 
   home.stateVersion = "25.11";
