@@ -217,7 +217,7 @@
 
   programs.rofi = {
     enable = true;
-    theme = "squared";
+    theme = "sidebar";
     font = "sans-serif";
     package = pkgs.rofi;
     modes = [
