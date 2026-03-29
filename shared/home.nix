@@ -59,6 +59,9 @@
 
     #messenger
     signal-desktop
+
+    #todoist
+    todoist-electron
   ];
 
   home.stateVersion = "25.11";
