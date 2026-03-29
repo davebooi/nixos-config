@@ -193,9 +193,7 @@ in
   systemd.user.startServices = "sd-switch";
 
 
-  # niri window manager and noctllalia she
-  xdg.configFile."niri/config.kdl" = { source = niri/config.kdl; force = true; };
-  xdg.configFile."niri/noctalia.kdl" = { source = niri/noctalia.kdl; force = true; };
+  # niri window manager config (symlinked from repo via line 15)
 
   services.mako.enable = true; # notification daemon
   services.swayidle.enable = true; # idle management daemon
