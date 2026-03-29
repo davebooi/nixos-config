@@ -37,7 +37,7 @@
         extraSpecialArgs = {inherit user inputs;};
         sharedModules = [
           ./shared/home.nix
-          inputs.zen-browser.homeModules.beta
+          #inputs.zen-browser.homeModules.beta
           #inputs.nixcord.homeModules.nixcord
           inputs.stylix.homeModules.stylix
         ];
@@ -45,7 +45,7 @@
     };
   in {
     nixosConfigurations.laptop = nixpkgs.lib.nixosSystem {
-      specialArgs = {inherit user;};
+      specialArgs = {inherit user inputs;};
       modules = [
         ./shared/configuration.nix
         ./laptop/configuration.nix
