@@ -43,7 +43,8 @@
     #dragon-drop
     mpv
     #ente-auth
-    nautilus
+    #nautilus
+    thunar
 
     # TUI
     yazi
@@ -55,6 +56,9 @@
     bat
     fzf
     ripgrep
+
+    #messenger
+    signal-desktop
   ];
 
   home.stateVersion = "25.11";
