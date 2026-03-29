@@ -9,12 +9,11 @@
 
 { pkgs, inputs, ... }:
 {
-  home-manager.users.dave = {
-    imports = [
-      inputs.noctalia.homeModules.default
-    ];
+  imports = [
+    inputs.noctalia.homeModules.default
+  ];
 
-    programs.noctalia-shell = {
+  programs.noctalia-shell = {
       enable = true;
       settings = {
         settingsVersion = 0;
@@ -578,5 +577,4 @@
         };
       };
     };
-  };
 }
