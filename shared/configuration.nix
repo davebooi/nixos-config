@@ -82,7 +82,6 @@
     #hyprland.enable = true;
     niri.enable = true;
     gnupg.agent.enable = true;
-    ssh.startAgent = true;
   };
 
   security = {
