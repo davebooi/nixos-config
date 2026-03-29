@@ -102,7 +102,7 @@
   programs.waybar.enable = true; # launch on startup in the default setting (bar)
 
   # Ensure a shell is enabled
-  zsh.enable = lib.mkDefault true;
+  programs.zsh.enable = lib.mkDefault true;
 
 
   # starship - an customizable prompt for any shell
