@@ -12,7 +12,7 @@
 
 in
 {
-  xdg.configFile."nvim".source = config.lib.file.mkOutOfStoreSymlink niriPath;
+  xdg.configFile."niri".source = config.lib.file.mkOutOfStoreSymlink niriPath;
   
   # You can import other home-manager modules here
   imports = [
