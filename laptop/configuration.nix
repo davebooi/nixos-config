@@ -22,10 +22,9 @@
   boot.loader.grub.device = "/dev/nvme0n1";
   boot.loader.grub.useOSProber = true;
 
-  # Limit the number of generations to keep
-  boot.loader.systemd-boot.configurationLimit = 10;
-  # boot.loader.grub.configurationLimit = 10;
 
+  # Limit the number of generations to keep
+  boot.loader.grub.configurationLimit = 10;  
 
 
   nixpkgs = {
@@ -48,7 +47,6 @@
     ];
     # Configure your nixpkgs instance
     config = {
-      # Disable if you don't want unfree packages
       allowUnfree = true;
     };
   };
@@ -110,24 +108,6 @@
   # Configure console keymap
   console.keyMap = "de";
 
-
-
-  # users.users = {
-  #   # FIXME: Replace with your username
-  #   dave = {
-  #     # TODO: You can set an initial password for your user.
-  #     # If you do, you can skip setting a root password by passing '--no-root-passwd' to nixos-install.
-  #     # Be sure to change it (using passwd) after rebooting!
-  #     isNormalUser = true;
-  #     description = "dave";
-  #     packages = with pkgs; [];
-  #     openssh.authorizedKeys.keys = [
-  #       "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIBolGUP1csTwizfDMc5XF9+pM7bgVYwewCmWzRjn+qOF dave@arch-laptop"
-  #     ];
-  #     # TODO: Be sure to add any other groups you need (such as networkmanager, audio, docker, etc)
-  #     extraGroups = [ "networkmanager" "wheel" ];
-  #   };
-  # };
 
   # This setups a SSH server. Very important if you're setting up a headless system.
   # Feel free to remove if you don't need it.
