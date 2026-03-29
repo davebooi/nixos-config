@@ -15,6 +15,7 @@
     # ../modules/hm/swww.nix
     ../modules/hm/waybar.nix
     ../modules/hm/stylix.nix
+    ../modules/hm/noctalia.nix
     # ../modules/hm/helix.nix
     # ../modules/hm/fish.nix
     # ../modules/hm/obsidian.nix
@@ -30,7 +31,7 @@
     # essential apps and services
     grimblast
     #kitty
-    foot
+    #foot
     adwaita-icon-theme # for GTK apps
     playerctl
 
