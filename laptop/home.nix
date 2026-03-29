@@ -182,7 +182,7 @@
 
 
   #window manager and such
-  xdg.configFile."niri/config.kdl".source = niri/config.kdl;
+  xdg.configFile."niri/config.kdl" = { source = niri/config.kdl; force = true; };
 
   services.mako.enable = true; # notification daemon
   services.swayidle.enable = true; # idle management daemon
