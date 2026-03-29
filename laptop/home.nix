@@ -122,6 +122,9 @@
     nautilus #file manager
     xwayland-satellite # xwayland support (niri)
     gtklock # screen locker (Super+Alt+L in niri default)
+    fuzzel.enable = true; # Super+D in the default setting (app launcher)
+    waybar.enable = true; # launch on startup in the default setting (bar)
+  
     
    ];
 
@@ -191,15 +194,16 @@
         User git
         IdentityFile ~/.ssh/id_ed25519_github
     '';
+    matchBlocks = {
+    "github.com" = {
+      hostname = "github.com";
+      user = "git";
+      identityFile = "~/.ssh/id_ed25519_github";
+      identitiesOnly = true;  # don't try other keys
+      };
+    };
   };
 
-  programs.ssh.matchBlocks = {
-  "github.com" = {
-    identityFile = "~/.ssh/id_ed25519_github";
-  };
-};
-
-  services.ssh-agent.enable = true;
 
   # Nicely reload system units when changing configs
   systemd.user.startServices = "sd-switch";
@@ -208,14 +212,12 @@
   #window manager and such
   xdg.configFile."niri/config.kdl".source = ./config.kdl;
 
-  programs.fuzzel.enable = true; # Super+D in the default setting (app launcher)
-  programs.waybar.enable = true; # launch on startup in the default setting (bar)
-  
   services.mako.enable = true; # notification daemon
   services.swayidle.enable = true; # idle management daemon
   services.polkit-gnome.enable = true; # polkit
+  
 
-
+  # rofi launcher
   programs.rofi = {
     enable = true;
     theme = "sidebar";
