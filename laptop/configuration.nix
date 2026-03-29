@@ -60,7 +60,7 @@
     # Perform garbage collection weekly to maintain low disk usage
     automatic = true;
     dates = "weekly";
-    options = "--delete-older-than 7d";
+    options = lib.mkForce "--delete-older-than 7d";
   };
     settings = {
       # Enable flakes and new 'nix' command
