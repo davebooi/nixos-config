@@ -18,6 +18,7 @@
     ../modules/hm/waybar.nix
     ../modules/hm/stylix.nix
     ../modules/hm/noctalia.nix
+    ../modules/hm/swayidle.nix
     # ../modules/hm/helix.nix
     # ../modules/hm/fish.nix
     # ../modules/hm/obsidian.nix
