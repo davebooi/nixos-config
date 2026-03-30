@@ -120,7 +120,7 @@
       font = {
         #family = "JetBrains Mono"; # managed via stylix
         #style = "Regular"; # managed via stylix
-        size = 13;
+        # size = 13; # managed via stylix
       };
       colors.draw_bold_text_with_bright_colors = true;
       scrolling.multiplier = 5;
