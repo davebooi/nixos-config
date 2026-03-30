@@ -12,7 +12,7 @@
   imports = [
 
     ../modules/hm/git.nix
-    ../modules/hm/waybar.nix
+    #../modules/hm/waybar.nix
     ../modules/hm/stylix.nix
     ../modules/hm/noctalia.nix
     ../modules/hm/swayidle.nix
