@@ -171,7 +171,7 @@
 
 
   # niri window manager and noctllalia shell
-  home.file.".config/noctalia".source = ~/nixos-config/laptop/niri;
+  home.file.".config/noctalia".source = ./niri;
   #xdg.configFile."niri/config.kdl" = { source = niri/config.kdl; force = true; };
   #xdg.configFile."niri/noctalia.kdl" = { source = niri/noctalia.kdl; force = true; };
 
