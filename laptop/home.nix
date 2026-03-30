@@ -117,9 +117,9 @@
     enable = true;
     settings = {
       env.TERM = "xterm-256color";
-      font.normal = {
-        family = "JetBrains Mono";
-        style = "Regular";
+      font = {
+        #family = "JetBrains Mono"; # managed via stylix
+        #style = "Regular"; # managed via stylix
         size = 13;
       };
       colors.draw_bold_text_with_bright_colors = true;
