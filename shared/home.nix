@@ -22,10 +22,10 @@
   programs.bash = {
     enable = true;
     shellAliases ={
-      cat = "bat"
-      cls = "clear"
-      ls = "lsd"
-      grep = "ripgrep"
+      cat = "bat";
+      cls = "clear";
+      ls = "lsd";
+      grep = "ripgrep";
     };
   };
 
