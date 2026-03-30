@@ -170,8 +170,8 @@
   systemd.user.startServices = "sd-switch";
 
 
-  # niri window manager and noctllalia shell
-  home.file.".config/noctalia".source = ./niri;
+  # niri window manager and noctalia shell
+  home.file.".config/niri".source = ./niri;
   #xdg.configFile."niri/config.kdl" = { source = niri/config.kdl; force = true; };
   #xdg.configFile."niri/noctalia.kdl" = { source = niri/noctalia.kdl; force = true; };
 
