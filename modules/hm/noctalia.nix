@@ -74,7 +74,6 @@
               }
               {
                 id = "Battery";
-                deviceNativePath = "BAT1";
               }
               {
                 id = "Volume";
