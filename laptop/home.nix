@@ -90,6 +90,7 @@
     #swaybg # wallpaper
     #nautilus #file manager
 
+    niri
     xwayland-satellite # xwayland support (niri)
     gtklock # screen locker (Super+Alt+L in niri default)
     
@@ -103,9 +104,6 @@
     cliphist
 
    ];
-
-  # nir window manager
-  programs.niri.enable = true;
 
   # Ensure a shell is enabled
   programs.zsh.enable = lib.mkDefault true;
