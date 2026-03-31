@@ -138,6 +138,10 @@
 
   programs.niri.enable = true;
 
+  # backlight control
+  users.users.${user}.extraGroups = [ "video" ];
+  environment.systemPackages = with pkgs; [ brightnessctl ];
+
   # https://nixos.wiki/wiki/FAQ/When_do_I_update_stateVersion
   system.stateVersion = "25.11";
 }
