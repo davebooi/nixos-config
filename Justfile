@@ -6,11 +6,11 @@
 #
 ############################################################################
 
-deploy:
-  nixos-rebuild switch --flake .#laptop --sudo
+deploy target:
+  nixos-rebuild switch --flake .#{{target}} --sudo
 
-debug:
-  nixos-rebuild switch --flake .#laptop --sudo --show-trace --verbose
+debug target:
+  nixos-rebuild switch --flake .#{{target}} --sudo --show-trace --verbose
 
 up:
   nix flake update
