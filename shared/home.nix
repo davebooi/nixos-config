@@ -17,6 +17,7 @@
     ../modules/hm/noctalia.nix
     ../modules/hm/swayidle.nix
     ../modules/hm/cliphist.nix
+    ../modules/hm/niri.nix
   ];
 
   programs.bash = {

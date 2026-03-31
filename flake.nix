@@ -39,6 +39,7 @@
       home-manager = {
         useGlobalPkgs = true;
         useUserPackages = true;
+        backupFileExtension = "backup" ;
         users.${user} = module;
         extraSpecialArgs = {inherit user inputs;};
         sharedModules = [
