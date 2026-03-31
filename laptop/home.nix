@@ -102,6 +102,7 @@
 
     #clipboard
     cliphist
+    wl-clipboard
 
    ];
 
