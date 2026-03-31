@@ -138,6 +138,8 @@
 
   programs.niri.enable = true;
 
+  services.upower.enable = true;
+
   # backlight control
   users.users.${user}.extraGroups = [ "video" ];
   environment.systemPackages = with pkgs; [ brightnessctl ];
