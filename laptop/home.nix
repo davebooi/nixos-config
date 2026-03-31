@@ -101,7 +101,7 @@
 
     #clipboard
     cliphist
-    
+
    ];
 
   # nir window manager
@@ -189,7 +189,7 @@
   services.mako.enable = true; # notification daemon
   services.swayidle.enable = true; # idle management daemon
   services.polkit-gnome.enable = true; # polkit
-  services.cliphist.enable # clipboard manager
+  services.cliphist.enable = true; # clipboard manager
 
   # rofi launcher
   programs.rofi = {
