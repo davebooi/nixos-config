@@ -114,10 +114,11 @@ spawn-at-startup "noctalia-shell"
 spawn-at-startup "gnome-keyring-daemon" "--start" "--components=secrets"
 spawn-at-startup "thunar" "--daemon"
 spawn-at-startup "sleep 5 && aw-qt"
-spawn-at-startup "clipse" "-listen"
+//spawn-at-startup "clipse" "-listen"
+spawn-at-startup "wl-paste" "--watch" "cliphist" "store"
 spawn-at-startup "signal-desktop"
 spawn-at-startup "altus"
-spawn-at-startup "todoist"
+spawn-at-startup "todoist-electron"
 spawn-at-startup "dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP"
 spawn-at-startup "systemctl --user start xdg-desktop-portal.service"
 
@@ -239,8 +240,8 @@ window-rule {
 binds {
     Mod+Return hotkey-overlay-title="Open a Terminal: alacritty" { spawn "alacritty"; }
     Mod+D hotkey-overlay-title="Run an Application: rofi" { spawn "rofi" "-show" "drun"; }
-    Mod+Shift+Q hotkey-overlay-title="Run an Application: rofi-powermenu" { spawn "rofi" "-show" "p" "-modi" "p:'rofi-power-menu --no-symbols'"; }
-    Mod+Shift+C hotkey-overlay-title="Run an Application: rofi-calc" { spawn "LC_NUMERIC=de_DE.UTF-8" "LC_MONETARY=de_DE.UTF-8"   "rofi" "-show" "calc" "-modi" "calc" "-no-show-match" "-no-sort" "-reuse-result" "-no-persist-history" "-calc-command" "'echo -n '{result}' | clipse -c'"; }
+    Mod+Shift+Q hotkey-overlay-title="Run an Application: rofi-powermenu" { spawn "rofi" "-show" "p" "-modi" "p:rofi-power-menu" "--no-symbols"; }
+    //Mod+Shift+C hotkey-overlay-title="Run an Application: rofi-calc" { spawn "LC_NUMERIC=de_DE.UTF-8" "LC_MONETARY=de_DE.UTF-8"   "rofi" "-show" "calc" "-modi" "calc" "-no-show-match" "-no-sort" "-reuse-result" "-no-persist-history" "-calc-command" "'echo -n '{result}' | clipse -c'"; }
     Mod+W hotkey-overlay-title="Run an Application: Firefox" { spawn "firefox"; }
     Mod+T hotkey-overlay-title="Run an Application: yazi" { spawn "alacritty" "-e" "yazi"; }
     Mod+Shift+T hotkey-overlay-title="Run an Application: thunar" { spawn "thunar"; }
