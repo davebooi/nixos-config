@@ -87,6 +87,7 @@
   security = {
     polkit.enable = true;
     pam.services.login.enableGnomeKeyring = true;
+    pam.services.gtklock = {};
   };
 
   # Some programs need SUID wrappers, can be configured further or are

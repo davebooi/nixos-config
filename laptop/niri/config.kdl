@@ -239,8 +239,8 @@ window-rule {
 binds {
     Mod+Return hotkey-overlay-title="Open a Terminal: alacritty" { spawn "alacritty"; }
     Mod+D hotkey-overlay-title="Run an Application: rofi" { spawn "rofi" "-show" "drun"; }
-    Mod+Shift+Q hotkey-overlay-title="Run an Application: rofi-powermenu" { spawn "rofi-powermenu"; }
-    Mod+Shift+C hotkey-overlay-title="Run an Application: rofi-calc" { spawn "rofi-calc"; }
+    Mod+Shift+Q hotkey-overlay-title="Run an Application: rofi-powermenu" { spawn "rofi" "-show" "p" "-modi" "p:'rofi-power-menu --no-symbols'"; }
+    Mod+Shift+C hotkey-overlay-title="Run an Application: rofi-calc" { spawn "LC_NUMERIC=de_DE.UTF-8" "LC_MONETARY=de_DE.UTF-8"   "rofi" "-show" "calc" "-modi" "calc" "-no-show-match" "-no-sort" "-reuse-result" "-no-persist-history" "-calc-command" "'echo -n '{result}' | clipse -c'"; }
     Mod+W hotkey-overlay-title="Run an Application: Firefox" { spawn "firefox"; }
     Mod+T hotkey-overlay-title="Run an Application: yazi" { spawn "alacritty" "-e" "yazi"; }
     Mod+Shift+T hotkey-overlay-title="Run an Application: thunar" { spawn "thunar"; }
@@ -248,7 +248,7 @@ binds {
     //Mod+Shift+X hotkey-overlay-title="gptme-MyAgent" { spawn "~/.local/bin/gptme-launch"; }
     Mod+Shift+X hotkey-overlay-title="waybinder" { spawn "waybinder" "-T" "-w" "-w" "-y"; }
     Mod+Shift+E hotkey-overlay-title="Run an Application: rofimoji" { spawn "rofimoji" "-a" "copy"; }
-    Mod+Shift+W hotkey-overlay-title="Run an Application: wireguard" { spawn "rofi-wireguard"; }
+    Mod+Shift+W hotkey-overlay-title="Run an Application: wireguard" { spawn "rofi-network-manager"; }
     Mod+L hotkey-overlay-title="Lock the Screen: gtklock" { spawn "gtklock"; }
     Mod+Shift+P hotkey-overlay-title="Run an Application: hyprpicker" { spawn "hyprpicker"; } 
     Mod+Y { focus-workspace "special"; }
@@ -452,7 +452,7 @@ binds {
     Print { screenshot; }
     Ctrl+Print { screenshot-screen; }
     Alt+Print { screenshot-window; }
-    Mod+Shift+S hotkey-overlay-title="Run an Application: screenshot" { spawn "screenshot"; }
+    Mod+Shift+S hotkey-overlay-title="Run an Application: screenshot" { spawn-sh "grim -g \"$(slurp -o -r -c '#ff0000ff')\" -t ppm - | satty --filename - --fullscreen --output-filename ~/Pictures/Screenshots/satty-$(date '+%Y%m%d-%H:%M:%S').png"; }
 
     Mod+Escape allow-inhibiting=false { toggle-keyboard-shortcuts-inhibit; }
 
