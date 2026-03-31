@@ -90,7 +90,6 @@
     #swaybg # wallpaper
     #nautilus #file manager
 
-    niri
     xwayland-satellite # xwayland support (niri)
     gtklock # screen locker (Super+Alt+L in niri default)
     
@@ -100,10 +99,10 @@
     rofi-calc
     rofi-network-manager
 
-    #clipboard
-    cliphist
-    wl-clipboard
-    wl-clip-persist
+    # #clipboard
+    # cliphist
+    # wl-clipboard
+    # wl-clip-persist
 
    ];
 
@@ -207,18 +206,6 @@
       show-icons = true;
     };
   };
-
-  programs.niri = {
-  enable = true;
-  settings = {
-    spawn-at-startup = [
-      # Your existing startup commands
-      { command = ["wl-clip-persist" "--clipboard" "both"]; }
-      { command = ["sh" "-c" "wl-paste --type text --watch cliphist store"]; }
-      { command = ["sh" "-c" "wl-paste --type image --watch cliphist store"]; }
-    ];
-  };
-};
 
   # https://nixos.wiki/wiki/FAQ/When_do_I_update_stateVersion
   home.stateVersion = "25.11";
