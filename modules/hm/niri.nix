@@ -1,13 +1,4 @@
-{ pkgs, ... }:
+{ ... }:
 {
-  programs.niri = {
-    package = pkgs.niri;
-    settings = {
-      spawn-at-startup = [
-        {
-          command = [ "noctalia-shell" ];
-        }
-      ];
-    };
-  };
+  # niri window manager config is managed via home.file in laptop/home.nix
 }
