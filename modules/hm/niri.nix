@@ -1,21 +1,13 @@
-{ pkgs, inputs, ... }:
+{ pkgs, ... }:
 {
-  # ...
-
-  home-manager.users.dave = {
-    # ...
-    programs.niri = {
-      package = niri;
-      settings = {
-        # ...
-        spawn-at-startup = [
-          {
-            command = [
-              "noctalia-shell"
-            ];
-          }
-        ];
-      };
+  programs.niri = {
+    package = pkgs.niri;
+    settings = {
+      spawn-at-startup = [
+        {
+          command = [ "noctalia-shell" ];
+        }
+      ];
     };
   };
 }
