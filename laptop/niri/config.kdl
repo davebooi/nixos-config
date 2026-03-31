@@ -12,7 +12,6 @@ workspace "todo" { open-on-output "DP-2"; }
 input {
     keyboard {
         xkb { layout "de"; }
-        numlock
     }
 
     touchpad {
