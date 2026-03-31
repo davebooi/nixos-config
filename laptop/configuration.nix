@@ -29,22 +29,7 @@
   nixpkgs = {
     # You can add overlays here
     overlays = [
-      # Add overlays your own flake exports (from overlays and pkgs dir):
-      # inputs.self.overlays.additions
-      # inputs.self.overlays.modifications
-      # inputs.self.overlays.unstable-packages
-
-      # You can also add overlays exported from other flakes:
-      # neovim-nightly-overlay.overlays.default
-
-      # Or define it inline, for example:
-      # (final: prev: {
-      #   hi = final.hello.overrideAttrs (oldAttrs: {
-      #     patches = [ ./change-hello-to-hi.patch ];
-      #   });
-      # })
     ];
-    # Configure your nixpkgs instance
     config = {
       allowUnfree = true;
     };
@@ -78,34 +63,34 @@
   # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
 
   # Enable networking
-  networking.networkmanager.enable = true;
+  # networking.networkmanager.enable = true;
 
-  # Set your time zone
-  time.timeZone = "Europe/Berlin";
+  # # Set your time zone
+  # time.timeZone = "Europe/Berlin";
 
-  # Select internationalisation properties.
-  i18n.defaultLocale = "en_US.UTF-8";
+  # # Select internationalisation properties.
+  # i18n.defaultLocale = "en_US.UTF-8";
 
-  i18n.extraLocaleSettings = {
-    LC_ADDRESS = "de_DE.UTF-8";
-    LC_IDENTIFICATION = "de_DE.UTF-8";
-    LC_MEASUREMENT = "de_DE.UTF-8";
-    LC_MONETARY = "de_DE.UTF-8";
-    LC_NAME = "de_DE.UTF-8";
-    LC_NUMERIC = "de_DE.UTF-8";
-    LC_PAPER = "de_DE.UTF-8";
-    LC_TELEPHONE = "de_DE.UTF-8";
-    LC_TIME = "de_DE.UTF-8";
-  };
+  # i18n.extraLocaleSettings = {
+  #   LC_ADDRESS = "de_DE.UTF-8";
+  #   LC_IDENTIFICATION = "de_DE.UTF-8";
+  #   LC_MEASUREMENT = "de_DE.UTF-8";
+  #   LC_MONETARY = "de_DE.UTF-8";
+  #   LC_NAME = "de_DE.UTF-8";
+  #   LC_NUMERIC = "de_DE.UTF-8";
+  #   LC_PAPER = "de_DE.UTF-8";
+  #   LC_TELEPHONE = "de_DE.UTF-8";
+  #   LC_TIME = "de_DE.UTF-8";
+  # };
 
-  # Configure keymap in X11
-  services.xserver.xkb = {
-    layout = "de";
-    variant = "";
-  };
+  # # Configure keymap in X11
+  # services.xserver.xkb = {
+  #   layout = "de";
+  #   variant = "";
+  # };
 
-  # Configure console keymap
-  console.keyMap = "de";
+  # # Configure console keymap
+  # console.keyMap = "de";
 
 
   # SSH server.
@@ -150,6 +135,8 @@
     settings.General.Experimental = true;
   };
 
+
+  programs.niri.enable = true;
 
   # https://nixos.wiki/wiki/FAQ/When_do_I_update_stateVersion
   system.stateVersion = "25.11";

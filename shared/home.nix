@@ -26,12 +26,12 @@
       cat = "bat";
       cls = "clear";
       ls = "lsd";
-      grep = "ripgrep";
+      grep = "rg";
     };
   };
 
   home.packages = with pkgs; [
-    # essential apps and services
+    # essential apps and services^
     grimblast
     adwaita-icon-theme # for GTK apps
     playerctl
