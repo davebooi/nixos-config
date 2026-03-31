@@ -52,7 +52,7 @@
     #aria2 # A lightweight multi-protocol & multi-source command-line download utility
     #socat # replacement of openbsd-netcat
     nmap # A utility for network discovery and security auditing
-    ipcalc  # it is a calculator for the IPv4/v6 addresses
+    #ipcalc  # it is a calculator for the IPv4/v6 addresses
 
     # misc
     cowsay
@@ -85,16 +85,27 @@
     ethtool
     pciutils # lspci
     usbutils # lsusb
+    hyprpicker # color picker
 
     #swaybg # wallpaper
     #nautilus #file manager
 
     xwayland-satellite # xwayland support (niri)
     gtklock # screen locker (Super+Alt+L in niri default)
+    
+    # rofi tools
+    rofi-power-menu
+    rofimoji
+    rofi-calc
+    rofi-network-manager
+
+    #clipboard
+    cliphist
+    
    ];
 
-  #programs.fuzzel.enable = true;
-  #programs.waybar.enable = true; # launch on startup in the default setting (bar)
+  # nir window manager
+  programs.niri.enable = true;
 
   # Ensure a shell is enabled
   programs.zsh.enable = lib.mkDefault true;
@@ -117,11 +128,11 @@
     enable = true;
     settings = {
       env.TERM = "xterm-256color";
-      font = {
-        #family = "JetBrains Mono"; # managed via stylix
-        #style = "Regular"; # managed via stylix
-        # size = 13; # managed via stylix
-      };
+      # font = {
+      #   #family = "JetBrains Mono"; # managed via stylix
+      #   #style = "Regular"; # managed via stylix
+      #   # size = 13; # managed via stylix
+      # };
       colors.draw_bold_text_with_bright_colors = true;
       scrolling.multiplier = 5;
       selection.save_to_clipboard = true;
@@ -178,7 +189,7 @@
   services.mako.enable = true; # notification daemon
   services.swayidle.enable = true; # idle management daemon
   services.polkit-gnome.enable = true; # polkit
-  
+  services.cliphist.enable # clipboard manager
 
   # rofi launcher
   programs.rofi = {

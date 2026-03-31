@@ -58,6 +58,7 @@
 
     #messenger
     signal-desktop
+    altus
 
     #todoist
     todoist-electron

@@ -22,7 +22,6 @@
   boot.loader.grub.device = "/dev/nvme0n1";
   boot.loader.grub.useOSProber = true;
 
-
   # Limit the number of generations to keep
   boot.loader.grub.configurationLimit = 10;  
 
@@ -81,7 +80,7 @@
   # Enable networking
   networking.networkmanager.enable = true;
 
-  # Set your time zone.t
+  # Set your time zone
   time.timeZone = "Europe/Berlin";
 
   # Select internationalisation properties.
@@ -109,8 +108,7 @@
   console.keyMap = "de";
 
 
-  # This setups a SSH server. Very important if you're setting up a headless system.
-  # Feel free to remove if you don't need it.
+  # SSH server.
   services.openssh = {
     enable = true;
     settings = {
@@ -124,6 +122,7 @@
     };
   };
 
+
   # automatically upgrade host on change
   system.autoUpgrade = {
     enable = true;
@@ -133,8 +132,7 @@
   };
 
 
-  programs.niri.enable = true;
-
+  # login manager greetd
   services.greetd = {
     enable = true;
     settings = {
@@ -145,16 +143,13 @@
     };
   };
 
+
+  # enable bluetooth
   hardware.bluetooth = {
     enable = true;
     settings.General.Experimental = true;
   };
 
-  # # fix file chooser (TBD)
-  # xdg.portal.config.niri = {
-  # "org.freedesktop.impl.portal.FileChooser" = [ "gtk" ]; # or "kde"
-  # };
-  
 
   # https://nixos.wiki/wiki/FAQ/When_do_I_update_stateVersion
   system.stateVersion = "25.11";
